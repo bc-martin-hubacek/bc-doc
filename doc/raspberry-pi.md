@@ -17,8 +17,7 @@
 ## Prepare MicroSD card for Raspberry Pi
 
 Download HypriotOS image
-[hypriotos-rpi-v1.0.0-hub.zip]
-(https://docs.google.com/a/bigclown.com/uc?id=0B5pXL_JAACMvYU9DQm8xbFFvSkU&export=download)
+[hypriotos-rpi-v1.0.0-hub.zip](https://docs.google.com/a/bigclown.com/uc?id=0B5pXL_JAACMvYU9DQm8xbFFvSkU&export=download)
 
 > Note: BigClown has changed the default hostname to "hub" in the original
 > image. No other changes have been made.
