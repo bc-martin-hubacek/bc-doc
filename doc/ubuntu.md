@@ -1,68 +1,26 @@
-BigClown Alpha - Software Setup for Microsoft Windows Platform
-==============================================================
+BigClown Alpha - Software Setup for Ubuntu Platform
+===================================================
 
 ## Prerequisites
 
-- Microsoft Windows 7, 10 (64bit with CPU virtualization support enabled)
+- Ubuntu system 16.04, 15.10, 14.04 or 12.04 (minimum kernel version 3.10)
 - Administrator rights
 - Internet connectivity
 - USB cable, Bridge Module and sensors/actuators (Tags, Modules)
 
-## Download and install DockerToolbox
+## Install Docker
 
-[DockerToolbox-1.12.1.exe](https://github.com/docker/toolbox/releases/download/v1.12.1/DockerToolbox-1.12.1.exe)
-
-Allow VirtualBox through Windows Firewall
-
-Docker Toolbox 1.12.1 contains:
-
-- Docker 1.12.1
-- Boot2Docker ISO 1.12.1
-- docker-machine 0.8.1
-- docker-compose 1.8.0
-- Kitematic 0.12.0
-- Git version 2.9.0
-- VirtualBox 5.1.4
-
-## Download and install VirtualBox Extension Pack
-
-Start **Docker Quickstart Terminal**
-
-`docker-machine stop`
-
-`exit`
-
-[VirtualBox 5.1.4 Oracle VM VirtualBox Extension Pack](http://download.virtualbox.org/virtualbox/5.1.4/Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack)
-
-Install by doubleclick.
-
-## Configure VirtualBox USB and Network
-
-Connect Bridge Module with USB cable.
-
-Start **Oracle VM VirtualBox**
-
-Add USB config for FT260 of default virtual machine
-
-![usb](images/usb.png)
-
-Add Network Port Forwarding in Adapter 1 (NAT) of **default** virtual machine for http, https, mqtt
-
-![tcp](images/tcp.png)
+Please follow instructions at [Docker page](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
 ## Configure Docker
 
-Start **Docker Quickstart Terminal**
-
 Disconnect Bridge Module from USB.
 
-Connect Bridge Module with USB cable.
+Connect Bridge Module with USB cable again.
 
 `mkdir -v $HOME/hub`
 
-Note created directory (looks like /c/Users/<USERNAME>/hub) - "host directory" in references below.
-
-## Run Clown.Hub software on Microsoft Windows
+## Run Clown.Hub software on Ubuntu
 
 BigClown uses Docker container technology for seamless software delivery.
 
