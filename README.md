@@ -70,9 +70,9 @@ further instructions:
 
 ##### Desktop Platform
 
-- COMING SOON! **Windows** (version 7, 8.x & 10 is supported)
-- COMING SOON! **OS X** (version 10.11 is supported)
-- COMING SOON! **Ubuntu Desktop** (version 16.04 LTS is supported)
+- [**Windows**](/doc/windows.md) (version 7, 8.x & 10 is supported)
+- [**macOS**](/doc/macos.md) (version 10.11 is supported)
+- [**Ubuntu**](/doc/ubuntu.md) (version 16.04 LTS is supported)
 
 ## Where to go next?
 
