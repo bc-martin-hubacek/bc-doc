@@ -71,8 +71,8 @@ further instructions:
 ##### Desktop Platform
 
 - [**Windows**](/hub/windows.md) (version 7, 8.x & 10 is supported)
-- [**macOS**](/hub/macos.md) (version 10.11 is supported)
-- [**Ubuntu**](/hub/ubuntu.md) (version 16.04 LTS is supported)
+- [**macOS**](/hub/macos.md) (version 10.11+ is supported)
+- [**Ubuntu**](/hub/ubuntu.md) (version 16.04+ LTS is supported)
 
 ## Where to go next?
 
