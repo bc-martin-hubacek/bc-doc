@@ -6,7 +6,8 @@
 - Each message consists of **topic** and **payload**
 - Topic is describing the meaning of the data in payload. Topic uses tree-like structure with "/" symbol. Example topics: "bedroom/temperature", "kitchen/light/set"
 - MQTT server is called **Broker** and clients can **publish** messages and **subscribe** to different types of topics
-- In subscribe topics the wildcard "+" can be used for single level subscription and symbol "#" for multi level subscribtion. [More on topics](http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+- In subscribe topics the wildcard "+" can be used for single level subscription and symbol "#" for multi level subscribtion. This way you can subscribe to all temperature topics with "#/temperature"
+[More on topics](http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
 ## Mosquitto MQTT broker
 
@@ -22,4 +23,24 @@ To publish a message you use **mosquitto_pub** command
 
 `docker exec hub mosquitto_pub -t nodes/bridge/0/relay/i2c0-3b/set -m '{"state": true}'`
 
-Configuration file is located in `/etc/mosquitto/mosquitto.conf`
+## Mosquitto configuration
+
+You can edit Mosquitto settings in the configuration file which is located in `/etc/mosquitto/mosquitto.conf` inside the Docker.
+
+### MQTT Bridge
+
+Bridging two MQTT servers together is useful for example when you have your local MQTT server behind NAT and you would like to publish messages from the outside/Internet. You have to create public MQTT server (for example on AWS server) which you bridge with your home MQTT server. In this use case your local server will connect to your public server in AWS. So you have to configure your local server with commands below.
+
+```
+# Bridge to AWS
+connection aws
+address your.server.com
+
+# Optional password, you can also use TLS to protect credentials
+remote_username root
+remote_password root
+
+#topic <topic> [[[out | in | both] qos-level] local-prefix remote-prefix]
+topic # in 0 /home/# /home_remote/#
+```
+Topic command will subscribe to all topics (`topic #`) on remote server under `/home_remote/#` and will publish them on local server under `/home/#`. Parameter `in` describes direction and zero `0` means no QoS.
